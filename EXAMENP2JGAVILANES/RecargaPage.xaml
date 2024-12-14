@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Recargas.Views.RecargaPage"
+             Title="Nueva Recarga">
+
+    <VerticalStackLayout Spacing="10" Margin="10">
+        <Entry x:Name="NombreEntry" Placeholder="Nombre" Text="{Binding Nombre}" />
+        <Entry x:Name="ApellidoEntry" Placeholder="Apellido" Text="{Binding Apellido}" />
+        <Entry x:Name="TelefonoEntry" Placeholder="Teléfono" Text="{Binding Telefono}" Keyboard="Telephone" />
+        <Entry x:Name="ValorRecargaEntry" Placeholder="Valor de la Recarga" Text="{Binding ValorRecarga}" Keyboard="Numeric" />
+
+        <Grid ColumnDefinitions="*,*">
+            <Button Text="Guardar" Clicked="GuardarButton_Clicked" />
+            <Button Text="Eliminar" Grid.Column="1" Clicked="EliminarButton_Clicked" />
+        </Grid>
+    </VerticalStackLayout>
+</ContentPage>
