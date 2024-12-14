@@ -1,0 +1,8 @@
+﻿<maui:MauiWinUIApplication
+    x:Class="EXAMENP2JGAVILANES.WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:maui="using:Microsoft.Maui"
+    xmlns:local="using:EXAMENP2JGAVILANES.WinUI">
+
+</maui:MauiWinUIApplication>
