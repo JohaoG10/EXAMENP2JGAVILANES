@@ -1,10 +1,14 @@
 ﻿using EXAMENP2JGAVILANES.Views;
 
-public partial class App : Application
+namespace EXAMENP2JGAVILANES;
+
+public partial class AppShell : Shell
 {
-    public App()
+    public AppShell()
     {
         InitializeComponent();
-        MainPage = new RecargaPage();
+
+        Routing.RegisterRoute("RecargaPage", typeof(RecargaPage));
+        Routing.RegisterRoute("GridJOHAO", typeof(GridJOHAO));
     }
 }

@@ -1,4 +1,5 @@
 using EXAMENP2JGAVILANES.Models;
+
 namespace EXAMENP2JGAVILANES.Views;
 
 public partial class AllRecargasPage : ContentPage
@@ -11,12 +12,20 @@ public partial class AllRecargasPage : ContentPage
 
     protected override void OnAppearing()
     {
+        base.OnAppearing();
         ((Models.AllRecargas)BindingContext).LoadRecargas();
     }
 
     private async void Agregar_Clicked(object sender, EventArgs e)
     {
-        await Shell.Current.GoToAsync(nameof(RecargaPage));
+        // Navegamos a la página de agregar una recarga
+        var recargaPage = new RecargaPage();
+        recargaPage.Disappearing += (s, args) =>
+        {
+            // Actualizamos la lista tras cerrar la página
+            ((Models.AllRecargas)BindingContext).LoadRecargas();
+        };
+        await Navigation.PushAsync(recargaPage);
     }
 
     private async void RecargasCollection_SelectionChanged(object sender, SelectionChangedEventArgs e)
@@ -24,8 +33,13 @@ public partial class AllRecargasPage : ContentPage
         if (e.CurrentSelection.Count != 0)
         {
             var recarga = (Models.Recarga)e.CurrentSelection[0];
-            await Shell.Current.GoToAsync($"{nameof(RecargaPage)}?{nameof(RecargaPage.ItemId)}={recarga.Filename}");
+            await Navigation.PushAsync(new RecargaPage { ItemId = recarga.Filename });
             recargasCollection.SelectedItem = null;
         }
+    }
+
+    private async void IrAGrid_Clicked(object sender, EventArgs e)
+    {
+        await Navigation.PushAsync(new GridJOHAO());
     }
 }

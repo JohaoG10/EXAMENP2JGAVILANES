@@ -1,12 +1,11 @@
-﻿namespace EXAMENP2JGAVILANES
-{
-    public partial class App : Application
-    {
-        public App()
-        {
-            InitializeComponent();
+﻿using EXAMENP2JGAVILANES.Views;
 
-            MainPage = new AppShell();
-        }
+namespace EXAMENP2JGAVILANES;
+
+public partial class App : Application
+{
+    public App()
+    {
+        MainPage = new NavigationPage(new AllRecargasPage());
     }
 }

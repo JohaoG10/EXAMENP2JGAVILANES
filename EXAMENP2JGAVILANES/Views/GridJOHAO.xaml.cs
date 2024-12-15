@@ -1,9 +1,12 @@
-namespace EXAMENP2JGAVILANES;
+using EXAMENP2JGAVILANES.Views;
 
-public partial class GridJOHAO : ContentPage
+namespace EXAMENP2JGAVILANES.Views
 {
-	public GridJOHAO()
-	{
-		InitializeComponent();
-	}
+    public partial class GridJOHAO : ContentPage
+    {
+        public GridJOHAO()
+        {
+            InitializeComponent();
+        }
+    }
 }

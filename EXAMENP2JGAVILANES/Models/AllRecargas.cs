@@ -1,25 +1,36 @@
-﻿namespace EXAMENP2JGAVILANES.Models;
+﻿using System.Collections.ObjectModel;
 
-internal class AllRecargas
+namespace EXAMENP2JGAVILANES.Models;
+
+public class AllRecargas
 {
-    public List<Recarga> Recargas { get; private set; } = new List<Recarga>();
+    public ObservableCollection<Recarga> Recargas { get; private set; }
+
+    public AllRecargas()
+    {
+        Recargas = new ObservableCollection<Recarga>();
+        LoadRecargas();
+    }
 
     public void LoadRecargas()
     {
         Recargas.Clear();
-        foreach (var file in Directory.EnumerateFiles(FileSystem.AppDataDirectory, "*.recarga.txt"))
+        var files = Directory.EnumerateFiles(FileSystem.AppDataDirectory, "*.recarga.txt");
+        foreach (var filename in files)
         {
-            var data = File.ReadAllText(file).Split('|');
-            Recargas.Add(new Recarga
+            var data = File.ReadAllText(filename).Split('|');
+            var recarga = new Recarga
             {
-                Filename = file,
+                Filename = filename,
                 Nombre = data[0],
                 Apellido = data[1],
                 Telefono = data[2],
                 ValorRecarga = decimal.Parse(data[3]),
-                Fecha = File.GetCreationTime(file)
-            });
+                Fecha = File.GetCreationTime(filename)
+            };
+            Recargas.Add(recarga);
         }
     }
 }
+
 
