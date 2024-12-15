@@ -18,11 +18,11 @@ public partial class AllRecargasPage : ContentPage
 
     private async void Agregar_Clicked(object sender, EventArgs e)
     {
-        // Navegamos a la página de agregar una recarga
+        
         var recargaPage = new RecargaPage();
         recargaPage.Disappearing += (s, args) =>
         {
-            // Actualizamos la lista tras cerrar la página
+            
             ((Models.AllRecargas)BindingContext).LoadRecargas();
         };
         await Navigation.PushAsync(recargaPage);

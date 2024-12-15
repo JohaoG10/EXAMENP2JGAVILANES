@@ -19,10 +19,10 @@
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <StackLayout>
-                    <Label Text="{Binding Nombre}" FontSize="22" FontAttributes="Bold" />
-                    <Label Text="{Binding Apellido}" FontSize="18" />
-                    <Label Text="{Binding Telefono}" FontSize="18" />
-                    <Label Text="{Binding ValorRecarga, StringFormat='Recarga: {0:C}'}" FontSize="18" />
+                    <Label Text="{Binding Nombre}" Style="{StaticResource RecargasLabelStyle}" />
+                    <Label Text="{Binding Apellido}" Style="{StaticResource RecargasLabelStyle}" />
+                    <Label Text="{Binding Telefono}" Style="{StaticResource RecargasLabelStyle}" />
+                    <Label Text="{Binding ValorRecarga, StringFormat='Recarga: {0:C}'}" Style="{StaticResource RecargasLabelStyle}" />
                     <Label Text="{Binding Fecha, StringFormat='{0:dd/MM/yyyy}'}" FontSize="14" TextColor="Silver" />
                 </StackLayout>
             </DataTemplate>
