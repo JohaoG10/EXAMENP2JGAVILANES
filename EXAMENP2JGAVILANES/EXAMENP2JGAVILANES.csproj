@@ -63,13 +63,13 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="AllRecargasPage.xaml">
+	  <MauiXaml Update="Views\AllRecargasPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="GridJOHAO.xaml">
+	  <MauiXaml Update="Views\GridJOHAO.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="RecargaPage.xaml">
+	  <MauiXaml Update="Views\RecargaPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

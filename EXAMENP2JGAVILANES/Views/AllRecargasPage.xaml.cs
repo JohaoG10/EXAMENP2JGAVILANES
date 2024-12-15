@@ -1,4 +1,5 @@
-namespace Recargas.Views;
+using EXAMENP2JGAVILANES.Models;
+namespace EXAMENP2JGAVILANES.Views;
 
 public partial class AllRecargasPage : ContentPage
 {

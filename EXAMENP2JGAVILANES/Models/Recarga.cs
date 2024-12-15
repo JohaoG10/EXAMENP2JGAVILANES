@@ -1,4 +1,4 @@
-﻿namespace Recargas.Models;
+﻿namespace EXAMENP2JGAVILANES.Models;
 
 public class Recarga
 {
